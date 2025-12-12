@@ -45,7 +45,7 @@ io.on('connection', async(socket) => {
             return
         }
         console.log('message: ' + msg);
-        io.emit('chat start', msg,lastMessage._id.toString());
+        io.emit('chat start', msg,lastMessage._id.toString(),socket.id);
     });
     // socket.on("chat start msg",(msg)=>{
     //     console.log("chat has been started:"+msg);
