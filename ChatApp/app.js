@@ -5,6 +5,8 @@ import mongoose from "mongoose";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 import Message from "./models/messages.js";
+import { createAdapter } from "@socket.io/redis-adapter";
+import { createClient } from "redis";
 
 const app = express();
 const port = 3000;
@@ -13,6 +15,15 @@ const server = createServer(app);
 const io = new Server(server, {
   connectionStateRecovery: {}
 });
+
+
+const pubClient = createClient({ url: "redis://localhost:6379" });
+const subClient = pubClient.duplicate();
+
+await pubClient.connect();
+await subClient.connect();
+
+io.adapter(createAdapter(pubClient, subClient));
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
