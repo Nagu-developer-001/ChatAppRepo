@@ -84,13 +84,19 @@ io.on("connection", async (socket) => {
     }
   }
 });
-
+const PORT = process.env.PORT || process.argv[2] || 3000;
 //  START SERVER + CONNECT DB
-server.listen(port, async () => {
+server.listen(PORT, async () => {
   const connectDB = await mongoose.connect(
     "mongodb+srv://tvmgroupofltd_db_user:Dv9M7j3GovJOC4fT@appvideocall.9wy5mn8.mongodb.net/?appName=AppVideoCall"
   );
 
   console.log("Connected to MongoDB");
-  console.log(`Connected to MongoDB : HOST = ${connectDB.connection.host}`);
+  console.log(`Connected to MongoDB : HOST = ${connectDB.connection.host} AT ${PORT}`);
 });
+
+
+
+// server.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });
