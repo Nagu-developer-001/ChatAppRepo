@@ -42,7 +42,7 @@ io.on("connection", async (socket) => {
     }
 
     // ✅ Broadcast to all clients
-    io.emit("chat message", msg, saved._id.toString());
+    io.emit("chat message", msg, saved._id.toString(),socket.id);
 
     // ✅ ACK to sender
     callback();
@@ -80,6 +80,6 @@ server.listen(port, async () => {
     "mongodb+srv://tvmgroupofltd_db_user:Dv9M7j3GovJOC4fT@appvideocall.9wy5mn8.mongodb.net/?appName=AppVideoCall"
   );
 
-  console.log("✅ Connected to MongoDB");
+  console.log("Connected to MongoDB");
   console.log(`Connected to MongoDB : HOST = ${connectDB.connection.host}`);
 });
