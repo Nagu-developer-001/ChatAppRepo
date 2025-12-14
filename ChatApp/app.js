@@ -92,7 +92,7 @@ server.listen(PORT, async () => {
   );
 
   console.log("Connected to MongoDB");
-  console.log(`Connected to MongoDB : HOST = ${connectDB.connection.host} AT ${PORT}`)
+  console.log(`Connected to MongoDB : HOST = ${connectDB.connection.host} AT ${PORT}`);
 });
 
 
