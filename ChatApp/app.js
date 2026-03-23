@@ -90,7 +90,7 @@ server.listen(PORT, async () => {
   const connectDB = await mongoose.connect(
     "mongodb+srv://tvmgroupofltd_db_user:Dv9M7j3GovJOC4fT@appvideocall.9wy5mn8.mongodb.net/?appName=AppVideoCall"
   );
-
+  console.log("Connecting to DB...");
   console.log("Connected to MongoDB");
   console.log(`Connected to MongoDB : HOST = ${connectDB.connection.host} AT ${PORT}`);
 });
