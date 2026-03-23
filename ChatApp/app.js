@@ -86,7 +86,7 @@ io.on("connection", async (socket) => {
 });
 const PORT = process.env.PORT || process.argv[2] || 3000;
 //  START SERVER + CONNECT DB
-server.listen(PORT, async () => {
+server.listen(POR async () => {
   const connectDB = await mongoose.connect(
     "mongodb+srv://tvmgroupofltd_db_user:Dv9M7j3GovJOC4fT@appvideocall.9wy5mn8.mongodb.net/?appName=AppVideoCall"
   );
