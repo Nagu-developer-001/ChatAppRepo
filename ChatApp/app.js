@@ -84,7 +84,7 @@ io.on("connection", async (socket) => {
     }
   }
 });
-const PORT =  process.argv[2] || 3000;
+const PORT =  process.argv[2] || 3000
 //  START SERVER + CONNECT DB
 server.listen(PORT, async () => {
   const connectDB = await mongoose.connect(
